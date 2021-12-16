@@ -1,62 +1,8 @@
-@import "../_variables";
+.nav-link:hover {
+  transition: 0.5s all ease;
+  transform: translateY(10%);
+}
 
-nav {
-  top: 0;
-  position: sticky;
-
-  .navigation-wrapper {
-    height: 50px;
-  }
-
-  .navigation-container {
-    padding: 40px 5%;
-    float: right;
-
-    .logo-wrapper {
-      font-size: 1.5em;
-      position: absolute;
-      right: 95%;
-      float: left;
-    }
-
-    .logo-wrapper a {
-      color: #fff;
-      transition: 0.5s all ease;
-    }
-
-    .logo-wrapper a:hover {
-      opacity: 0.5;
-      transition: 0.5s all ease;
-    }
-
-    .navigation-items {
-      display: flex;
-      list-style-type: none;
-      text-decoration: none;
-      gap: 1.5em;
-      font-family: "Inter", sans-serif;
-    }
-
-    .navigation-items a {
-      color: #808080;
-      font-size: 1rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition: 0.5s all ease;
-    }
-
-    .navigation-items a:hover {
-      transition: 0.5s all ease;
-      color: #fff;
-    }
-
-    .sign-in a {
-      color: #fff;
-
-      outline: none;
-      cursor: pointer;
-      font-size: 0.8em;
-      transition: 0.5s all ease;
-    }
-  }
+.foodie {
+  font-family: "Gwendolyn", cursive;
 }
