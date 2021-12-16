@@ -1,75 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
-nav {
-  top: 0;
-  position: -webkit-sticky;
-  position: sticky;
-}
-
-nav .navigation-wrapper {
-  height: 50px;
-}
-
-nav .navigation-container {
-  padding: 40px 5%;
-  float: right;
-}
-
-nav .navigation-container .logo-wrapper {
-  font-size: 1.5em;
-  position: absolute;
-  right: 95%;
-  float: left;
-}
-
-nav .navigation-container .logo-wrapper a {
-  color: #fff;
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gwendolyn&display=swap");
+.nav-link:hover {
   -webkit-transition: 0.5s all ease;
   transition: 0.5s all ease;
+  -webkit-transform: translateY(10%);
+          transform: translateY(10%);
 }
 
-nav .navigation-container .logo-wrapper a:hover {
-  opacity: 0.5;
-  -webkit-transition: 0.5s all ease;
-  transition: 0.5s all ease;
-}
-
-nav .navigation-container .navigation-items {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  list-style-type: none;
-  text-decoration: none;
-  gap: 1.5em;
-  font-family: "Inter", sans-serif;
-}
-
-nav .navigation-container .navigation-items a {
-  color: #808080;
-  font-size: 1rem;
-  font-weight: 700;
-  text-decoration: none;
-  -webkit-transition: 0.5s all ease;
-  transition: 0.5s all ease;
-}
-
-nav .navigation-container .navigation-items a:hover {
-  -webkit-transition: 0.5s all ease;
-  transition: 0.5s all ease;
-  color: #fff;
-}
-
-nav .navigation-container .sign-in a {
-  color: #fff;
-  outline: none;
-  cursor: pointer;
-  font-size: 0.8em;
-  -webkit-transition: 0.5s all ease;
-  transition: 0.5s all ease;
+.foodie {
+  font-family: "Gwendolyn", cursive;
 }
 
 * {
   margin: 0;
   padding: 0;
-  background-color: #0a0a0b;
 }
 /*# sourceMappingURL=style.css.map */
