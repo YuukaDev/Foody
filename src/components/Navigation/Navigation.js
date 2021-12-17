@@ -16,20 +16,35 @@ function Navigation() {
     >
       <Navbar className="p-3">
         <Container>
-          <Nav style={{ gap: "10px", fontSize: "1.5em" , color: "#ACA7CB" }}>
-            <Nav.Link href="#about" style={{ transition: "0.5s all ease" }}>
+          <Nav style={{ gap: "10px", fontSize: "1.5em" }}>
+            <Nav.Link
+              href="#about"
+              style={{ transition: "0.5s all ease", color: "#ACA7CB" }}
+            >
               About
             </Nav.Link>
-            <Nav.Link href="#contact" style={{ transition: "0.5s all ease" }}>
+            <Nav.Link
+              href="#contact"
+              style={{ transition: "0.5s all ease", color: "#ACA7CB" }}
+            >
               Recipes
             </Nav.Link>
-            <Nav.Link className="foodie">
+            <Nav.Link
+              className="foodie"
+              href="#"
+              style={{ transition: "0.5s all ease", color: "#ACA7CB" }}
+            >
               Foody
             </Nav.Link>
-            <Nav.Link href="#contact" style={{ transition: "0.5s all ease" }}>
+            <Nav.Link
+              href="#contact"
+              style={{ transition: "0.5s all ease", color: "#ACA7CB" }}
+            >
               Contact
             </Nav.Link>
-            <Nav.Link style={{ transition: "0.5s all ease" }}>Sign In</Nav.Link>
+            <Nav.Link style={{ transition: "0.5s all ease", color: "#ACA7CB" }}>
+              Sign In
+            </Nav.Link>
           </Nav>
         </Container>
       </Navbar>
