@@ -1,58 +1,40 @@
 import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.css";
-
-import { Nav, Navbar, Container } from "react-bootstrap";
 
 function Navigation() {
+  const [open, setOpen] = useState(false);
   return (
-    <div
-      style={{
-        backgroundColor: "#474554",
-        fontFamily: "Ubuntu",
-      }}
-    >
-      <Navbar className="p-3">
-        <Container>
-          <Nav style={{ gap: "10px", fontSize: "1.5em" }}>
-            <Nav.Link
-              href="#home"
-              style={{ transition: "0.5s all ease", color: "#ACA7CB" }}
-            >
-              Home
-            </Nav.Link>
-            <Nav.Link
-              href="#about"
-              style={{ transition: "0.5s all ease", color: "#ACA7CB" }}
-            >
-              About
-            </Nav.Link>
-            <Nav.Link
-              href="#recipes"
-              style={{ transition: "0.5s all ease", color: "#ACA7CB" }}
-            >
-              Recipes
-            </Nav.Link>
-            <Nav.Link
-              href="#contact"
-              style={{ transition: "0.5s all ease", color: "#ACA7CB" }}
-            >
-              Contact
-            </Nav.Link>
-          </Nav>
-          <Nav style={{ fontSize: "1.5em" }}>
-            <Nav.Link
-              className="justify-content-end"
-              style={{
-                transition: "0.5s all ease",
-                color: "#ACA7CB",
-              }}
-            >
-              Sign Up
-            </Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
-    </div>
+    <>
+      <header>
+        <a class="logo" href="/">
+          <img src="images/logo.svg" alt="logo" />
+        </a>
+        <nav>
+          <ul class="nav__links">
+            <li>
+              <a href="#">Services</a>
+            </li>
+            <li>
+              <a href="#">Projects</a>
+            </li>
+            <li>
+              <a href="#">About</a>
+            </li>
+          </ul>
+        </nav>
+        <a class="cta" href="#">
+          Contact
+        </a>
+        <p class="menu cta">Menu</p>
+      </header>
+      <div className={!open ? "overlay" : "overlay--active"}>
+        <a class="close" onClick={() => setOpen(!open)}>&times;</a>
+        <div className="overlay__content">
+          <a href="#">Services</a>
+          <a href="#">Projects</a>
+          <a href="#">About</a>
+        </div>
+      </div>
+    </>
   );
 }
 
