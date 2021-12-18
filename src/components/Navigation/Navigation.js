@@ -7,9 +7,6 @@ function Navigation() {
   return (
     <div
       style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
         backgroundColor: "#474554",
         fontFamily: "Ubuntu",
       }}
@@ -18,13 +15,19 @@ function Navigation() {
         <Container>
           <Nav style={{ gap: "10px", fontSize: "1.5em" }}>
             <Nav.Link
+              href="#home"
+              style={{ transition: "0.5s all ease", color: "#ACA7CB" }}
+            >
+              Home
+            </Nav.Link>
+            <Nav.Link
               href="#about"
               style={{ transition: "0.5s all ease", color: "#ACA7CB" }}
             >
               About
             </Nav.Link>
             <Nav.Link
-              href="#contact"
+              href="#recipes"
               style={{ transition: "0.5s all ease", color: "#ACA7CB" }}
             >
               Recipes
@@ -35,8 +38,16 @@ function Navigation() {
             >
               Contact
             </Nav.Link>
-            <Nav.Link style={{ transition: "0.5s all ease", color: "#ACA7CB" }}>
-              Sign In
+          </Nav>
+          <Nav style={{ fontSize: "1.5em" }}>
+            <Nav.Link
+              className="justify-content-end"
+              style={{
+                transition: "0.5s all ease",
+                color: "#ACA7CB",
+              }}
+            >
+              Sign Up
             </Nav.Link>
           </Nav>
         </Container>
