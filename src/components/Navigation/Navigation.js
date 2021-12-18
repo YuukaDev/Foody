@@ -1,37 +1,51 @@
 import React, { useState } from "react";
 
+import Logo from "../assets/images/logo.png";
+
 function Navigation() {
   const [open, setOpen] = useState(false);
   return (
     <>
       <header>
         <a class="logo" href="/">
-          <img src="images/logo.svg" alt="logo" />
+          <img src={Logo} alt="logo" />
         </a>
         <nav>
           <ul class="nav__links">
             <li>
-              <a href="#">Services</a>
-            </li>
-            <li>
-              <a href="#">Projects</a>
+              <a href="#">Home</a>
             </li>
             <li>
               <a href="#">About</a>
             </li>
+            <li>
+              <a href="#">Recipes</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
           </ul>
         </nav>
-        <a class="cta" href="#">
-          Contact
+        <a
+          class="cta"
+          href="https://react-bootstrap.github.io/getting-started/introduction"
+        >
+          Sign Up
         </a>
-        <p class="menu cta">Menu</p>
+        <p class="menu cta" onClick={() => setOpen(!open)}>
+          <i class="fas fa-bars"></i>
+        </p>
       </header>
-      <div className={!open ? "overlay" : "overlay--active"}>
-        <a class="close" onClick={() => setOpen(!open)}>&times;</a>
+      <div className={!open ? "overlay" : "overlay overlay--active"}>
+        <a class="close" onClick={() => setOpen(!open)}>
+          &times;
+        </a>
         <div className="overlay__content">
-          <a href="#">Services</a>
-          <a href="#">Projects</a>
+          <a href="#">Home</a>
           <a href="#">About</a>
+          <a href="#">Recipes</a>
+          <a href="#">Contact</a>
+          <a href="#">Sign Up</a>
         </div>
       </div>
     </>
