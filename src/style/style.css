@@ -37,6 +37,8 @@ header {
 }
 
 .nav__links li {
+  -webkit-transition: 0.5s all ease;
+  transition: 0.5s all ease;
   gap: 10px;
 }
 
@@ -45,8 +47,11 @@ header {
   transition: color 0.3s ease 0s;
 }
 
-.nav__links li a:hover {
-  color: #0088a9;
+.nav__links li:hover {
+  -webkit-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+  -webkit-transform: translateY(25%);
+          transform: translateY(25%);
 }
 
 .cta {
