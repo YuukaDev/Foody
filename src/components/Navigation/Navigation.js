@@ -38,7 +38,7 @@ function Navigation() {
       </header>
       <div className={!open ? "overlay" : "overlay overlay--active"}>
         <a class="close" onClick={() => setOpen(!open)}>
-          &times;
+          <i class="fas fa-times"></i>
         </a>
         <div className="overlay__content">
           <a href="#">Home</a>
