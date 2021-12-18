@@ -30,13 +30,6 @@ function Navigation() {
               Recipes
             </Nav.Link>
             <Nav.Link
-              className="foodie"
-              href="#"
-              style={{ transition: "0.5s all ease", color: "#ACA7CB" }}
-            >
-              Foody
-            </Nav.Link>
-            <Nav.Link
               href="#contact"
               style={{ transition: "0.5s all ease", color: "#ACA7CB" }}
             >
