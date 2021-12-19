@@ -1,0 +1,29 @@
+.paragraph-section {
+  margin-top: 260px;
+  margin-left: 3em;
+  margin-right: 3em;
+  text-align: left;
+  color: #cdcdd1;
+  font-family: Inter, sans-serif;
+
+  .title {
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 0.3em;
+  }
+
+  hr {
+    margin: 0 auto;
+    margin-bottom: 1.5em;
+    width: 50%;
+    border: 2px solid #0088a9;
+  }
+
+  p {
+    margin-bottom: 2em;
+    font-size: 1.7em;
+  }
+}
