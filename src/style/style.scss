@@ -4,10 +4,12 @@
 @import "./_variables";
 @import "./navigation/_navigation";
 @import "./main/_main";
+@import "./about/_about";
 
 * {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 body {
