@@ -3,7 +3,6 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 30px 13%;
-  background-color: #24252a;
 }
 
 .logo {
@@ -41,16 +40,15 @@ header {
 }
 
 .cta {
-  padding: 9px 25px;
-  background-color: rgba(0, 136, 169, 1);
-  border: none;
+  padding: 10px 25px;
+  border: 2px solid #0088a9;
   border-radius: 50px;
   cursor: pointer;
-  transition: background-color 0.3s ease 0s;
+  transition: background-color 0.5s ease 0s;
 }
 
 .cta:hover {
-  background-color: rgba(0, 136, 169, 0.8);
+  background-color: #0088a9;
 }
 
 /* Mobile Nav */

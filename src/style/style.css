@@ -11,7 +11,6 @@ header {
       -ms-flex-align: center;
           align-items: center;
   padding: 30px 13%;
-  background-color: #24252a;
 }
 
 .logo {
@@ -55,17 +54,16 @@ header {
 }
 
 .cta {
-  padding: 9px 25px;
-  background-color: #0088a9;
-  border: none;
+  padding: 10px 25px;
+  border: 2px solid #0088a9;
   border-radius: 50px;
   cursor: pointer;
-  -webkit-transition: background-color 0.3s ease 0s;
-  transition: background-color 0.3s ease 0s;
+  -webkit-transition: background-color 0.5s ease 0s;
+  transition: background-color 0.5s ease 0s;
 }
 
 .cta:hover {
-  background-color: rgba(0, 136, 169, 0.8);
+  background-color: #0088a9;
 }
 
 /* Mobile Nav */
@@ -149,8 +147,39 @@ header {
   }
 }
 
+.main {
+  width: 100%;
+  max-width: 592px;
+  margin-top: 10em;
+  margin-right: auto;
+  margin-left: 100px;
+}
+
+.main h1 {
+  font-size: 7.5em;
+  font-family: Inter, sans-serif;
+  color: #fff;
+}
+
+.main h1:nth-child(3) {
+  background-color: red;
+}
+
+.main .paragraph {
+  margin-top: 50px;
+  font-size: 1.7em;
+  text-align: left;
+  opacity: 0.6;
+  color: #cdcdd1;
+  font-family: Inter, sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
+}
+
+body {
+  background-color: #0a0a0b;
 }
 /*# sourceMappingURL=style.css.map */
