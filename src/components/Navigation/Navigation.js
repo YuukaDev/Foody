@@ -7,11 +7,11 @@ function Navigation() {
   return (
     <>
       <header>
-        <a class="logo" href="/">
+        <a className="logo" href="/">
           <img src={Logo} alt="logo" />
         </a>
         <nav>
-          <ul class="nav__links">
+          <ul className="nav__links">
             <li>
               <a href="#">Home</a>
             </li>
@@ -27,18 +27,18 @@ function Navigation() {
           </ul>
         </nav>
         <a
-          class="cta"
+          className="cta"
           href="https://react-bootstrap.github.io/getting-started/introduction"
         >
           Sign Up
         </a>
-        <p class="menu cta" onClick={() => setOpen(!open)}>
-          <i class="fas fa-bars"></i>
+        <p className="menu cta" onClick={() => setOpen(!open)}>
+          <i className="fas fa-bars"></i>
         </p>
       </header>
       <div className={!open ? "overlay" : "overlay overlay--active"}>
-        <a class="close" onClick={() => setOpen(!open)}>
-          <i class="fas fa-times"></i>
+        <a className="close" onClick={() => setOpen(!open)}>
+          <i className="fas fa-times"></i>
         </a>
         <div className="overlay__content">
           <a href="#">Home</a>
