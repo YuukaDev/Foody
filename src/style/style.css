@@ -188,9 +188,9 @@ header {
 
 .paragraph-section {
   margin-top: 260px;
-  margin-left: 3em;
-  margin-right: 3em;
-  text-align: left;
+  margin-left: 8.5em;
+  margin-right: 8.5em;
+  text-align: justify;
   color: #cdcdd1;
   font-family: Inter, sans-serif;
 }
@@ -218,6 +218,11 @@ header {
 .paragraph-section p {
   margin-bottom: 2em;
   font-size: 1.7em;
+}
+
+.recipes {
+  color: #fff;
+  font-size: 1.5em;
 }
 
 * {
