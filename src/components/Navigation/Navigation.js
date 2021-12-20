@@ -19,7 +19,7 @@ function Navigation() {
               <a href="#about">About</a>
             </li>
             <li>
-              <a href="http://localhost:3000/recipes">Recipes</a>
+              <a href="/recipes">Recipes</a>
             </li>
             <li>
               <a href="#contact">Contact</a>
