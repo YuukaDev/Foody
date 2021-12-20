@@ -8,15 +8,13 @@ import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <>
-      <div>
-        <Header />
-        <Main />
-        <Routes>
-          <Route path="/recipes" element={<Recipes />} />
-        </Routes>
-      </div>
-    </>
+    <div>
+      <Header />
+      <Main />
+      <Routes>
+        <Route path="/recipes" element={<Recipes />} />
+      </Routes>
+    </div>
   );
 }
 
