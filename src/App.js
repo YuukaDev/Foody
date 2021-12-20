@@ -1,6 +1,7 @@
 // Components
 import Header from "./pages/Header/Header";
-import About from "./components/About/About";
+import Main from "./pages/Main/Main";
+
 import Recipes from "./components/Recipes/Recipes";
 
 import { Routes, Route } from "react-router-dom";
@@ -10,7 +11,7 @@ function App() {
     <>
       <div>
         <Header />
-        <About />
+        <Main />
         <Routes>
           <Route path="/recipes" element={<Recipes />} />
         </Routes>
