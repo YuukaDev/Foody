@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import Logo from "../assets/images/logo.png";
 
-function Navigation({ Item, Navigation }) {
+function Navigation() {
   const [open, setOpen] = useState(false);
   return (
     <>
