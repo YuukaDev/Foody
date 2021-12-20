@@ -1,11 +1,11 @@
 import Navigation from "../../components/Navigation/Navigation";
-import Main from "../../components/Main/Main";
+import Hero from "../../components/Hero/Hero";
 
 function Header() {
   return (
     <div>
       <Navigation />
-      <Main />
+      <Hero />
     </div>
   );
 }
