@@ -1,6 +1,5 @@
 // Components
-import Navigation from "./components/Navigation/Navigation";
-import Main from "./components/Main/Main";
+import Header from "./pages/Header/Header";
 import About from "./components/About/About";
 import Recipes from "./components/Recipes/Recipes";
 
@@ -10,8 +9,7 @@ function App() {
   return (
     <>
       <div>
-        <Navigation />
-        <Main />
+        <Header />
         <About />
         <Routes>
           <Route path="/recipes" element={<Recipes />} />
