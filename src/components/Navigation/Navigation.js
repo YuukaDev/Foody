@@ -53,5 +53,3 @@ function Navigation() {
 }
 
 export default Navigation;
-
-//font-family: 'Puppies Play', cursive;
