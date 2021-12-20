@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import Logo from "../assets/images/logo.png";
 
-function Navigation() {
+function Navigation({ Item, Navigation }) {
   const [open, setOpen] = useState(false);
   return (
     <>
@@ -19,7 +19,7 @@ function Navigation() {
               <a href="#about">About</a>
             </li>
             <li>
-              <a href="#recipes">Recipes</a>
+              <a href="http://localhost:3000/recipes">Recipes</a>
             </li>
             <li>
               <a href="#contact">Contact</a>
