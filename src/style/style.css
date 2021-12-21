@@ -220,9 +220,18 @@ header {
   font-size: 1.7em;
 }
 
-.recipes {
+.recipes-hero {
+  width: 100%;
+  max-width: 592px;
+  margin-top: 10em;
+  margin-right: auto;
+  margin-left: 100px;
+}
+
+.recipes-hero h1 {
+  font-size: 7.5em;
+  font-family: Inter, sans-serif;
   color: #fff;
-  font-size: 1.5em;
 }
 
 * {
