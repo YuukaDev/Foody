@@ -2,7 +2,8 @@
 import Header from "./pages/Header/Header";
 import Main from "./pages/Main/Main";
 
-//import Recipes from "./components/Recipes/Recipes";
+import ContentRecipes from "./components/ContentRecipes/ContentRecipes";
+import Test from "./Test";
 
 import { Routes, Route } from "react-router-dom";
 import React, { StrictMode } from "react";
@@ -16,7 +17,8 @@ function App() {
       </div>
       <StrictMode>
         <Routes>
-          <Route path="/recipes" element={<Recipes />} />
+          <Route path="/recipes" element={<ContentRecipes />} />
+          <Route path="/testing" element={<Test />} />
         </Routes>
       </StrictMode>
     </>
@@ -24,11 +26,3 @@ function App() {
 }
 
 export default App;
-
-function Recipes() {
-  return (
-    <div>
-      <h1>Hello World!</h1>
-    </div>
-  );
-}
