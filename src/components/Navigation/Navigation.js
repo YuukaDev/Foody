@@ -13,7 +13,7 @@ function Navigation() {
         <nav>
           <ul className="nav__links">
             <li>
-              <a href="#home">Home</a>
+              <a href="/">Home</a>
             </li>
             <li>
               <a href="#about">About</a>
@@ -22,7 +22,7 @@ function Navigation() {
               <a href="/recipes">Recipes</a>
             </li>
             <li>
-              <a href="#contact">Contact</a>
+              <a href="/">Contact</a>
             </li>
           </ul>
         </nav>
@@ -41,11 +41,11 @@ function Navigation() {
           <i className="fas fa-times"></i>
         </a>
         <div className="overlay__content">
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Recipes</a>
-          <a href="#">Contact</a>
-          <a href="#">Sign Up</a>
+          <a href="/">Home</a>
+          <a href="#about">About</a>
+          <a href="/recipes">Recipes</a>
+          <a href="#cotact">Contact</a>
+          <a href="#signup">Sign Up</a>
         </div>
       </div>
     </>
