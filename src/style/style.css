@@ -221,17 +221,34 @@ header {
 }
 
 .recipes-hero {
-  width: 100%;
-  max-width: 592px;
-  margin-top: 10em;
-  margin-right: auto;
-  margin-left: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 50px;
+  margin-top: 4em;
 }
 
 .recipes-hero h1 {
-  font-size: 7.5em;
+  text-align: center;
+  font-size: 5em;
   font-family: Inter, sans-serif;
   color: #fff;
+}
+
+.recipes-hero h1:hover {
+  -webkit-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+  -webkit-text-decoration: wavy;
+          text-decoration: wavy;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  color: #0088a9;
 }
 
 * {
