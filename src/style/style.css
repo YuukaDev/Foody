@@ -221,6 +221,7 @@ header {
 }
 
 .recipes-hero {
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -298,9 +299,31 @@ header {
   background-color: transparent;
   border: 2px solid #0088a9;
   outline: none;
-  padding: 10px;
-  width: 100%;
+  padding: 15px;
+  width: 300px;
+  outline: none;
   color: #fff;
+  border-radius: 6px;
+}
+
+.form-container form ::-webkit-input-placeholder {
+  position: absolute;
+  left: 5%;
+}
+
+.form-container form :-ms-input-placeholder {
+  position: absolute;
+  left: 5%;
+}
+
+.form-container form ::-ms-input-placeholder {
+  position: absolute;
+  left: 5%;
+}
+
+.form-container form ::placeholder {
+  position: absolute;
+  left: 5%;
 }
 
 .form-container form button {
@@ -311,12 +334,13 @@ header {
   cursor: pointer;
   -webkit-transition: 0.5s all ease;
   transition: 0.5s all ease;
+  border-radius: 6px;
 }
 
 .form-container form button:hover {
-  background-color: #0088a9;
-  -webkit-transition: 0.5s all ease;
-  transition: 0.5s all ease;
+  color: #0088a9;
+  -webkit-transition: color 0.25s ease;
+  transition: color 0.25s ease;
 }
 
 * {
