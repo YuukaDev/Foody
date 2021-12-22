@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
+
+import Card from "./components/Card/Card";
 
 function Test() {
+  const [recipes, setRecipes] = useState([]);
   const getRecipe = async (query) => {
-    let res = await fetch(
+    const response = await axios.get(
       `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=48749e6b&app_key=%20e48b4d118c5df082474141e6e4746f1a`
     );
-    let random = await res.json();
-    console.log(random.hits[0]);
+    console.log(response.data.hits);
+    setRecipes(response.data.hits[0].recipe);
   };
   return (
     <div>
@@ -29,6 +33,10 @@ function Test() {
         />
         <button type="submit">Submit</button>
       </form>
+      <div className="recipes">
+        <img src={recipes.image} />
+        <img src={recipes.image} />
+      </div>
     </div>
   );
 }
