@@ -42,8 +42,8 @@ function Navigation() {
         </a>
         <div className="overlay__content">
           <a href="/">Home</a>
-          <a href="#about">About</a>
-          <a href="/recipes">Recipes</a>
+          <a href="/about">About</a>
+          <a href="#recipes">Recipes</a>
           <a href="#cotact">Contact</a>
           <a href="#signup">Sign Up</a>
         </div>
