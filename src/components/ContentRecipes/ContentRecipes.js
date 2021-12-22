@@ -11,7 +11,7 @@ function ContentRecipes() {
       <Navigation />
       <div className="recipes-hero">
         <Bounce left>
-          <h1>Foody Recipes</h1>
+          <h1 className="hover-text">Foody Recipes</h1>
         </Bounce>
       </div>
       <div className="content-container"></div>
