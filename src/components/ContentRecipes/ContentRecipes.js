@@ -14,7 +14,16 @@ function ContentRecipes() {
           <h1 className="hover-text">Foody Recipes</h1>
         </Bounce>
       </div>
-      <div className="content-container"></div>
+      <div className="form-container">
+        <form>
+          <input
+            type="text"
+            id="recipesInput"
+            placeholder="Enter a username..."
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </div>
   );
 }
