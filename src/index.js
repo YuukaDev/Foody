@@ -9,12 +9,14 @@ import ContentRecipes from "./components/ContentRecipes/ContentRecipes";
 import Test from "./Test";
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/recipes" element={<ContentRecipes />} />
-      <Route path="/testing" element={<Test />} />
-    </Routes>
-  </BrowserRouter>,
+  <React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/recipes" element={<ContentRecipes />} />
+        <Route path="/testing" element={<Test />} />
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>,
   document.getElementById("root")
 );
