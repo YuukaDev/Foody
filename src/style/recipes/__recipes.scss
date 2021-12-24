@@ -62,8 +62,8 @@ $color: #0088a9;
 
   .recipes-content-container {
     .recipes-card {
-      width: 300px;
-      min-height: 450px;
+      width: 350px;
+      height: 600px;
       background-color: #5475d3;
       color: #fff;
       padding: 8px;
@@ -79,14 +79,20 @@ $color: #0088a9;
         }
 
         hr {
+          height: 5px;
+          margin-top: 20px;
           margin-bottom: 10px;
-          border: 2px solid #2a3a69;
+          background-color: #2a3a69;
+          border: none;
         }
 
         p {
-          list-style-type: disc;
+          font-size: 1.2em;
           margin-top: 10px;
-          margin-bottom: 15px;
+        }
+
+        span {
+          font-size: 1.3em;
         }
 
       }
