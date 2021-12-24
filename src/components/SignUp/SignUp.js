@@ -61,7 +61,7 @@ function SignUp() {
             </Form.Group>
             <Button
               style={{
-                backgroundColor: "#0088a9",
+                backgroundColor: "#67e1ff",
                 outline: "none",
                 border: "none",
               }}
