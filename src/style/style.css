@@ -365,6 +365,10 @@ header {
   display: none;
 }
 
+.authentication-wrapper {
+  color: #fff;
+}
+
 * {
   margin: 0;
   padding: 0;
