@@ -5,16 +5,18 @@ import axios from "axios";
 import { Bounce } from "react-reveal";
 
 function ContentRecipes() {
+  const [open, isOpen] = useState(true);
   const [recipes, setRecipes] = useState([]);
   const getRecipe = async (query) => {
     const response = await axios.get(
       `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=48749e6b&app_key=%20e48b4d118c5df082474141e6e4746f1a`
     );
+    isOpen(false);
     console.log(response.data.hits);
     setRecipes(response.data.hits);
   };
   return (
-    <div className="recipes-wrapper">
+    <>
       <Navigation />
       <Bounce left>
         <div className="recipes-hero">
@@ -43,22 +45,23 @@ function ContentRecipes() {
           </form>
         </div>
       </Bounce>
-      <div className="recipesss">
+      <div className="recipe-content-wrapper">
         {recipes.map((recipe) => (
-          <div className="container">
-            <div class="card">
+          <div className="recipes-content-container">
+            <div class="recipes-card">
               <img src={recipe.recipe.image} alt={recipe.recipe.label} />
-              <div class="card__details">
-                <span class="tag">{recipe.recipe.dietLabels}</span>
+              <div class="card-details">
+                <p class="tag">{recipe.recipe.dietLabels}</p>
                 <h1 class="name">{recipe.recipe.label}</h1>
                 <p>{recipe.recipe.ingredientLines}</p>
-                <span>{recipe.recipe.cautions}</span>
+                <hr />
+                <span>Cautions - {recipe.recipe.cautions}</span>
               </div>
             </div>
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 }
 
