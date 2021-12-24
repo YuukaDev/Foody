@@ -22,11 +22,19 @@ function SignUp() {
     }
   };
   return (
-    <>
-      <Container className="h-100 d-flex justify-content-center align-items-center">
-        <Card>
+    <div style={{ backgroundColor: "#0a0a0b" }}>
+      <Container
+        style={{
+          height: "100vh",
+        }}
+        className="d-flex justify-content-center align-items-center"
+      >
+        <Card
+          style={{ width: "28rem", backgroundColor: "#3a65da" }}
+          className="p-5"
+        >
           <Card.Body>
-            <h2>Sign Up</h2>
+            <h2 className="text-light">Sign Up</h2>
           </Card.Body>
           <Form>
             <Form.Group
@@ -35,7 +43,9 @@ function SignUp() {
               }}
               className="p-2"
             >
-              <Form.Label htmlFor="email">Email</Form.Label>
+              <Form.Label className="text-light" htmlFor="email">
+                Email
+              </Form.Label>
               <Form.Control id="email" type="email" required />
             </Form.Group>
             <Form.Group
@@ -44,23 +54,30 @@ function SignUp() {
               }}
               className="p-2"
             >
-              <Form.Label htmlFor="password">Password</Form.Label>
+              <Form.Label className="text-light" htmlFor="password">
+                Password
+              </Form.Label>
               <Form.Control id="password" type="password" required />
             </Form.Group>
             <Button
+              style={{
+                backgroundColor: "#0088a9",
+                outline: "none",
+                border: "none",
+              }}
               onClick={register}
-              className="btn-danger w-100 mt-3"
+              className="w-50 mt-3"
               type="button"
             >
               Sign Up
             </Button>
           </Form>
+          <div className="mt-3 text-center text-light">
+            Already have an account? Login
+          </div>
         </Card>
       </Container>
-      <div className="w-100 text-center mt-2">
-        Already have an account? Login
-      </div>
-    </>
+    </div>
   );
 }
 
