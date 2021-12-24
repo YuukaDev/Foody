@@ -343,6 +343,47 @@ header {
   transition: color 0.25s ease;
 }
 
+#container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (4fr)[4];
+      grid-template-columns: repeat(4, 4fr);
+  gap: 30px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#container .card {
+  background-color: gray;
+  padding: 8px;
+}
+
+#container .tag {
+  padding: 4px 8px;
+  border: 1px solid #e5eaed;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+}
+
+#container .name {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 16px;
+}
+
+#container p {
+  font-size: 14px;
+  color: #fff;
+  line-height: 150%;
+}
+
+#container .card__details {
+  /* Add space around the details */
+  padding: 16px 8px 8px 8px;
+}
+
 * {
   margin: 0;
   padding: 0;
