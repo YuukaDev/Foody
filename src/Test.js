@@ -3,8 +3,6 @@ import axios from "axios";
 
 import "./Test.css";
 
-import Card from "./components/Card/Card";
-
 function Test() {
   const [recipes, setRecipes] = useState([]);
   const getRecipe = async (query) => {
@@ -15,7 +13,7 @@ function Test() {
     setRecipes(response.data.hits);
   };
   return (
-    <div className="test">
+    <>
       <form
         autoComplete="off"
         onSubmit={(e) => {
@@ -35,28 +33,22 @@ function Test() {
         />
         <button type="submit">Submit</button>
       </form>
-      <div className="recipes-wrapper">
+      <div className="recipesss">
         {recipes.map((recipe) => (
-          <div class="container">
+          <div className="container">
             <div class="card">
-              <div class="card-header">
-                <img src={recipe.recipe.image} alt="rover" />
-              </div>
-              <div class="card-body">
-                <span class="tag tag-teal">{recipe.recipe.label}</span>
+              <img src={recipe.recipe.image} alt={recipe.recipe.label} />
+              <div class="card__details">
+                <span class="tag">{recipe.recipe.dietLabels}</span>
+                <h1 class="name">{recipe.recipe.label}</h1>
                 <p>{recipe.recipe.ingredientLines}</p>
-                <div class="user">
-                  <div class="user-info">
-                    <h5>{recipe.recipe.cautions}</h5>
-                    <small>{recipe.recipe.calories}</small>
-                  </div>
-                </div>
+                <span>{recipe.recipe.cautions}</span>
               </div>
             </div>
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 }
 
