@@ -305,8 +305,8 @@ header {
 }
 
 .recipe-content-wrapper .recipes-content-container .recipes-card {
-  width: 300px;
-  min-height: 450px;
+  width: 350px;
+  height: 600px;
   background-color: #5475d3;
   color: #fff;
   padding: 8px;
@@ -324,14 +324,20 @@ header {
 }
 
 .recipe-content-wrapper .recipes-content-container .recipes-card .card-details hr {
+  height: 5px;
+  margin-top: 20px;
   margin-bottom: 10px;
-  border: 2px solid #2a3a69;
+  background-color: #2a3a69;
+  border: none;
 }
 
 .recipe-content-wrapper .recipes-content-container .recipes-card .card-details p {
-  list-style-type: disc;
+  font-size: 1.2em;
   margin-top: 10px;
-  margin-bottom: 15px;
+}
+
+.recipe-content-wrapper .recipes-content-container .recipes-card .card-details span {
+  font-size: 1.3em;
 }
 
 .recipe-content-wrapper .recipes-content-container .recipes-card img {
