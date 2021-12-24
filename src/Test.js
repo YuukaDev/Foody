@@ -37,12 +37,21 @@ function Test() {
       </form>
       <div className="recipes-wrapper">
         {recipes.map((recipe) => (
-          <div className="container">
-            <div className="cards">
-              <img src={recipe.recipe.image} />
-              <h3>{recipe.recipe.label}</h3>
-              <p className="card-summary">{recipe.recipe.ingredientLines}</p>
-              <span className="card-meta">{recipe.recipe.cautions}</span>
+          <div class="container">
+            <div class="card">
+              <div class="card-header">
+                <img src={recipe.recipe.image} alt="rover" />
+              </div>
+              <div class="card-body">
+                <span class="tag tag-teal">{recipe.recipe.label}</span>
+                <p>{recipe.recipe.ingredientLines}</p>
+                <div class="user">
+                  <div class="user-info">
+                    <h5>{recipe.recipe.cautions}</h5>
+                    <small>{recipe.recipe.calories}</small>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         ))}
