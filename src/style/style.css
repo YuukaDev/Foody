@@ -305,6 +305,7 @@ header {
 }
 
 .recipe-content-wrapper .recipes-content-container .recipes-card {
+  overflow: hidden;
   width: 350px;
   height: 600px;
   background-color: #5475d3;
@@ -331,8 +332,8 @@ header {
   border: none;
 }
 
-.recipe-content-wrapper .recipes-content-container .recipes-card .card-details p {
-  font-size: 1.2em;
+.recipe-content-wrapper .recipes-content-container .recipes-card .card-details .ingridients {
+  font-size: 1.3em;
   margin-top: 10px;
 }
 
@@ -352,7 +353,16 @@ header {
   width: 55%;
   border-radius: 64px;
   padding: 10px;
+  font-size: 0.8em;
   background-color: #2a3a69;
+}
+
+.recipe-content-wrapper .recipes-content-container .recipes-card .tag p {
+  font-size: 15px;
+}
+
+.error {
+  display: none;
 }
 
 * {

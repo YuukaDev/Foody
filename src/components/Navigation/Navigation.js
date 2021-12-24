@@ -28,7 +28,7 @@ function Navigation() {
         </nav>
         <a
           className="cta"
-          href="https://react-bootstrap.github.io/getting-started/introduction"
+          href="/signup"
         >
           Sign Up
         </a>
@@ -45,7 +45,7 @@ function Navigation() {
           <a href="/about">About</a>
           <a href="#recipes">Recipes</a>
           <a href="#cotact">Contact</a>
-          <a href="#signup">Sign Up</a>
+          <a href="/signup">Sign Up</a>
         </div>
       </div>
     </>
