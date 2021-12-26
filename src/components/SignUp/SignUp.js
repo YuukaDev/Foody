@@ -4,6 +4,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/firebase";
 
 import { Form, Button, Card, Container } from "react-bootstrap";
+import Navigation from "../Navigation/Navigation";
 
 function SignUp() {
   const [registerEmail, setRegisterEmail] = useState("");
@@ -22,9 +23,10 @@ function SignUp() {
   };
   return (
     <div style={{ backgroundColor: "#0a0a0b" }}>
+      <Navigation />
       <Container
         style={{
-          height: "100vh",
+          marginTop: "150px"
         }}
         className="d-flex justify-content-center align-items-center"
       >
@@ -85,7 +87,7 @@ function SignUp() {
           <div className="mt-3 text-center text-light">
             Already have an account?{" "}
             <a
-              style={{ color: "#e7eff6", textDecoration: "none" }}
+              style={{ color: "#72b2e2", textDecoration: "none" }}
               href="/login"
             >
               Login
