@@ -1,30 +1,42 @@
 import React, { useState } from "react";
 
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+} from "firebase/auth";
 import { auth } from "../firebase/firebase";
 
-import { Form, Button, Card, Container } from "react-bootstrap";
+import { Form, Button, Card, Container, FormLabel } from "react-bootstrap";
 import Navigation from "../Navigation/Navigation";
-import Error from "../Error/Error";
 
 function SignUp() {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
-  const [error, setError] = useState("");
+  const [user, setUser] = useState("");
+
+  onAuthStateChanged(auth, (currentUser) => {
+    setUser(user);
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setRegisterEmail(e.target.value);
+    setRegisterPassword(e.target.value);
+  };
 
   const registerUser = async () => {
-    if (registerEmail === error && registerPassword === error) {
-      alert("da");
-    } else {
-      try {
-        await createUserWithEmailAndPassword(
-          auth,
-          registerEmail,
-          registerPassword
-        );
-      } catch (err) {
-        console.log(err.message);
-      }
+    if (registerEmail === "" && registerPassword === "") {
+      alert("no");
+    }
+    try {
+      await createUserWithEmailAndPassword(
+        auth,
+        registerEmail,
+        registerPassword
+      );
+      console.log(user);
+    } catch (err) {
+      console.log(err.message);
     }
   };
   return (
@@ -43,35 +55,20 @@ function SignUp() {
           <Card.Body>
             <h2 className="fs-1 text-light">Sign Up</h2>
           </Card.Body>
-          <Form>
-            <Form.Group
-              onChange={(e) => {
-                setRegisterEmail(e.target.value);
-              }}
-              className="p-2"
-            >
+          <Form onChange={handleSubmit}>
+            <Form.Group className="p-2">
               <Form.Label className="fs-4 text-light" htmlFor="email" required>
                 Username
               </Form.Label>
               <Form.Control autoComplete="off" id="username" type="text" />
             </Form.Group>
-            <Form.Group
-              onChange={(e) => {
-                setRegisterEmail(e.target.value);
-              }}
-              className="p-2"
-            >
+            <Form.Group className="p-2">
               <Form.Label className="fs-4 text-light" htmlFor="email" required>
                 Email
               </Form.Label>
               <Form.Control autoComplete="off" id="email" type="email" />
             </Form.Group>
-            <Form.Group
-              onChange={(e) => {
-                setRegisterPassword(e.target.value);
-              }}
-              className="p-2"
-            >
+            <Form.Group className="p-2">
               <Form.Label
                 className="fs-4 text-light"
                 htmlFor="password"
@@ -96,11 +93,12 @@ function SignUp() {
             </Button>
           </Form>
           <div className="mt-3 text-center text-light">
-            Already have an account?{" "}
+            Already have an account?
             <a
               style={{ color: "#72b2e2", textDecoration: "none" }}
               href="/login"
             >
+              {" "}
               Login
             </a>
           </div>
