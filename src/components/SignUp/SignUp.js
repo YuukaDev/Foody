@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
+  signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../firebase/firebase";
 
@@ -12,31 +13,26 @@ import Navigation from "../Navigation/Navigation";
 function SignUp() {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState({});
 
   onAuthStateChanged(auth, (currentUser) => {
-    setUser(user);
+    setUser(currentUser);
   });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setRegisterEmail(e.target.value);
-    setRegisterPassword(e.target.value);
-  };
 
   const registerUser = async () => {
     if (registerEmail === "" && registerPassword === "") {
       alert("no");
-    }
-    try {
-      await createUserWithEmailAndPassword(
-        auth,
-        registerEmail,
-        registerPassword
-      );
-      console.log(user);
-    } catch (err) {
-      console.log(err.message);
+    } else {
+      try {
+        await createUserWithEmailAndPassword(
+          auth,
+          registerEmail,
+          registerPassword
+        );
+        console.log(user);
+      } catch (err) {
+        console.log(err.message);
+      }
     }
   };
   return (
@@ -55,18 +51,32 @@ function SignUp() {
           <Card.Body>
             <h2 className="fs-1 text-light">Sign Up</h2>
           </Card.Body>
-          <Form onChange={handleSubmit}>
+          <Form>
             <Form.Group className="p-2">
               <Form.Label className="fs-4 text-light" htmlFor="email" required>
                 Username
               </Form.Label>
-              <Form.Control autoComplete="off" id="username" type="text" />
+              <Form.Control
+                onChange={(e) => {
+                  setRegisterEmail(e.target.value);
+                }}
+                autoComplete="off"
+                id="username"
+                type="text"
+              />
             </Form.Group>
             <Form.Group className="p-2">
               <Form.Label className="fs-4 text-light" htmlFor="email" required>
                 Email
               </Form.Label>
-              <Form.Control autoComplete="off" id="email" type="email" />
+              <Form.Control
+                onChange={(e) => {
+                  setRegisterEmail(e.target.value);
+                }}
+                autoComplete="off"
+                id="email"
+                type="email"
+              />
             </Form.Group>
             <Form.Group className="p-2">
               <Form.Label
@@ -76,7 +86,14 @@ function SignUp() {
               >
                 Password
               </Form.Label>
-              <Form.Control autoComplete="off" id="password" type="password" />
+              <Form.Control
+                onChange={(e) => {
+                  setRegisterPassword(e.target.value);
+                }}
+                autoComplete="off"
+                id="password"
+                type="password"
+              />
             </Form.Group>
             <Button
               style={{
@@ -100,6 +117,8 @@ function SignUp() {
             >
               {" "}
               Login
+              <br />
+              {user?.email}
             </a>
           </div>
         </Card>
