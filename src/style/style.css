@@ -5,11 +5,11 @@ header {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 30px 13%;
 }
 
@@ -50,7 +50,7 @@ header {
   -webkit-transition: 0.5s all ease;
   transition: 0.5s all ease;
   -webkit-transform: translateY(25%);
-  transform: translateY(25%);
+          transform: translateY(25%);
 }
 
 .cta {
@@ -96,14 +96,14 @@ header {
   height: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .overlay a {
@@ -171,14 +171,13 @@ header {
   background-image: linear-gradient(transparent calc(65% - 5px), #004a5d 5px);
 }
 
-.paragraph {
-  margin-top: 30px;
-  font-size: 1.7em;
+.main .paragraph {
+  margin-top: 50px;
+  font-size: 5em;
   text-align: left;
   color: #cdcdd1;
   font-family: Inter, sans-serif;
 }
-
 
 .img-container {
   position: absolute;
@@ -206,8 +205,8 @@ header {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 0.5em;
   font-size: 3em;
   text-align: center;
@@ -219,6 +218,7 @@ header {
   margin-bottom: 1.5em;
   width: 50%;
   border: 2px solid #0088a9;
+  opacity: 1;
 }
 
 .paragraph-section p {
@@ -232,11 +232,11 @@ header {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-left: 50px;
   margin-top: 4em;
 }
@@ -254,11 +254,11 @@ header {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .form-container form {
@@ -289,18 +289,24 @@ header {
   border-radius: 6px;
 }
 
+.form-container form button:hover {
+  color: #0088a9;
+  -webkit-transition: color 0.25s ease;
+  transition: color 0.25s ease;
+}
+
 .recipe-content-wrapper {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (0fr);
-  grid-template-columns: repeat(4, 0fr);
+  -ms-grid-columns: (0fr)[4];
+      grid-template-columns: repeat(4, 0fr);
   gap: 30px;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-top: 50px;
 }
 
@@ -320,19 +326,11 @@ header {
   margin-left: 10px;
 }
 
-.recipe-content-wrapper
-  .recipes-content-container
-  .recipes-card
-  .card-details
-  h1 {
+.recipe-content-wrapper .recipes-content-container .recipes-card .card-details h1 {
   margin-top: 15px;
 }
 
-.recipe-content-wrapper
-  .recipes-content-container
-  .recipes-card
-  .card-details
-  hr {
+.recipe-content-wrapper .recipes-content-container .recipes-card .card-details hr {
   height: 5px;
   margin-top: 20px;
   margin-bottom: 10px;
@@ -340,20 +338,12 @@ header {
   border: none;
 }
 
-.recipe-content-wrapper
-  .recipes-content-container
-  .recipes-card
-  .card-details
-  .ingridients {
+.recipe-content-wrapper .recipes-content-container .recipes-card .card-details .ingridients {
   font-size: 1.3em;
   margin-top: 10px;
 }
 
-.recipe-content-wrapper
-  .recipes-content-container
-  .recipes-card
-  .card-details
-  span {
+.recipe-content-wrapper .recipes-content-container .recipes-card .card-details span {
   font-size: 1.3em;
 }
 

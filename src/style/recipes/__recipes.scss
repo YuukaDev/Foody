@@ -44,6 +44,10 @@ $color: #0088a9;
       cursor: pointer;
       transition: 0.5s all ease;
       border-radius: 6px;
+      &:hover {
+        color: $color;
+        transition: color 0.25s ease;
+      }
     }
   }
 }

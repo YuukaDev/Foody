@@ -5,20 +5,26 @@ import { auth } from "../firebase/firebase";
 
 import { Form, Button, Card, Container } from "react-bootstrap";
 import Navigation from "../Navigation/Navigation";
+import Error from "../Error/Error";
 
 function SignUp() {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
+  const [error, setError] = useState("");
 
-  const register = async () => {
-    try {
-      await createUserWithEmailAndPassword(
-        auth,
-        registerEmail,
-        registerPassword
-      );
-    } catch (err) {
-      console.log(err.message);
+  const registerUser = async () => {
+    if (registerEmail === error && registerPassword === error) {
+      alert("da");
+    } else {
+      try {
+        await createUserWithEmailAndPassword(
+          auth,
+          registerEmail,
+          registerPassword
+        );
+      } catch (err) {
+        console.log(err.message);
+      }
     }
   };
   return (
@@ -26,7 +32,7 @@ function SignUp() {
       <Navigation />
       <Container
         style={{
-          marginTop: "150px"
+          marginTop: "100px",
         }}
         className="d-flex justify-content-center align-items-center"
       >
@@ -44,15 +50,21 @@ function SignUp() {
               }}
               className="p-2"
             >
-              <Form.Label className="fs-4 text-light" htmlFor="email">
+              <Form.Label className="fs-4 text-light" htmlFor="email" required>
+                Username
+              </Form.Label>
+              <Form.Control autoComplete="off" id="username" type="text" />
+            </Form.Group>
+            <Form.Group
+              onChange={(e) => {
+                setRegisterEmail(e.target.value);
+              }}
+              className="p-2"
+            >
+              <Form.Label className="fs-4 text-light" htmlFor="email" required>
                 Email
               </Form.Label>
-              <Form.Control
-                autoComplete="off"
-                id="email"
-                type="email"
-                required
-              />
+              <Form.Control autoComplete="off" id="email" type="email" />
             </Form.Group>
             <Form.Group
               onChange={(e) => {
@@ -60,15 +72,14 @@ function SignUp() {
               }}
               className="p-2"
             >
-              <Form.Label className="fs-4 text-light" htmlFor="password">
+              <Form.Label
+                className="fs-4 text-light"
+                htmlFor="password"
+                required
+              >
                 Password
               </Form.Label>
-              <Form.Control
-                autoComplete="off"
-                id="password"
-                type="password"
-                required
-              />
+              <Form.Control autoComplete="off" id="password" type="password" />
             </Form.Group>
             <Button
               style={{
@@ -77,7 +88,7 @@ function SignUp() {
                 border: "none",
                 width: "100%",
               }}
-              onClick={register}
+              onClick={registerUser}
               className="mt-3"
               type="button"
             >
