@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
-  signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../firebase/firebase";
 
@@ -118,7 +117,6 @@ function SignUp() {
               {" "}
               Login
               <br />
-              {user?.email}
             </a>
           </div>
         </Card>

@@ -1,0 +1,30 @@
+.contact-wrapper {
+  color: #fff;
+
+  .title-contact {
+    text-align: center;
+    font-size: 3em;
+  }
+}
+
+.contact-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+
+  i {
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: #405DE6;
+    border-radius: 64px;
+    cursor: pointer;
+    transition: 0.7s all ease;
+    &:hover {
+        transform: rotate(360deg);
+        transition: 1s all ease;
+    }
+  }
+
+}
