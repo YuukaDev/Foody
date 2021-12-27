@@ -8,15 +8,12 @@ import { auth } from "../firebase/firebase";
 
 import { Form, Button, Card, Container, FormLabel } from "react-bootstrap";
 import Navigation from "../Navigation/Navigation";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 function SignUp() {
   const [registerEmail, setRegisterEmail] = useState("");
   const [registerPassword, setRegisterPassword] = useState("");
-  const [user, setUser] = useState({});
-
-  onAuthStateChanged(auth, (currentUser) => {
-    setUser(currentUser);
-  });
+  const [user] = useAuthState();
 
   const registerUser = async () => {
     if (registerEmail === "" && registerPassword === "") {
