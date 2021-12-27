@@ -6,8 +6,8 @@ import "./style/style.css";
 
 import App from "./App";
 import Recipes from "./pages/Recipes/Recipes";
-import Test from "./Test";
 import SignUp from "./components/SignUp/SignUp";
+import Login from "./components/Login/Login";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,8 +15,8 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/recipes" element={<Recipes />} />
-        <Route path="/testing" element={<Test />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
