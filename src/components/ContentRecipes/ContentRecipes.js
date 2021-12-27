@@ -55,7 +55,6 @@ function ContentRecipes() {
             <div className="recipes-card">
               <img src={recipe.recipe.image} alt={recipe.recipe.label} />
               <div className="card-details">
-                <p className="tag">{recipe.recipe.dietLabels}</p>
                 <h1 className="name">{recipe.recipe.label}</h1>
                 <p className="ingridients">{recipe.recipe.ingredientLines}</p>
                 <hr />
