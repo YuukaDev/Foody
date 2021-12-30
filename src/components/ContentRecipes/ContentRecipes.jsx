@@ -24,8 +24,7 @@ import {
 } from "@chakra-ui/react";
 
 import axios from "axios";
-import Imager from "../assets/images/domino.png";
-import "./ContentRecipes.css";
+import { Fade } from "react-reveal";
 
 function ContentRecipes() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -76,63 +75,70 @@ function ContentRecipes() {
             onClick={onOpen}
           >
             {recipes.map((recipe, index) => (
-              <GridItem
-                key={index}
-                style={{
-                  width: "300px",
-                  height: "300px",
-                  marginTop: "50px",
-                }}
-                boxShadow="dark-lg"
-              >
-                <Image
-                  borderRadius="24px"
+              <Fade left>
+                <GridItem
+                  key={index}
                   style={{
-                    heigth: "450px",
-                    cursor: "pointer",
-                    overflow: "hidden",
-                    transition: "0.5s all ease",
+                    width: "300px",
+                    height: "300px",
+                    marginTop: "50px",
                   }}
-                  src={recipe.recipe.image}
-                />
-                <Box
-                  display="flex"
-                  justifyContent="center"
-                  alignItems="center"
-                  color="#fff"
-                  borderRadius="6px"
-                  height="40px"
-                  position="relative"
-                  top="2"
-                  width="100%"
-                  bg="teal.900"
+                  boxShadow="dark-lg"
                 >
-                  <Heading
-                    mb="20px"
-                    textAlign="center"
-                    fontSize="1.5em"
-                    mt="20px"
+                  <Image
+                    borderRadius="24px"
+                    style={{
+                      heigth: "450px",
+                      cursor: "pointer",
+                      overflow: "hidden",
+                      transition: "0.5s all ease",
+                    }}
+                    src={recipe.recipe.image}
+                  />
+                  <Box
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                    color="#fff"
+                    borderRadius="6px"
+                    height="40px"
+                    position="relative"
+                    top="2"
+                    width="100%"
+                    bg="teal.900"
                   >
-                    {recipe.recipe.label}
-                  </Heading>
-                </Box>
-                <Modal bg="transparent" size="lg" isOpen={isOpen} onClose={onClose}>
-                  <ModalOverlay />
-                  <ModalContent>
-                    <Heading>{recipe.recipe.label}</Heading>
-                    <ModalCloseButton />
-                    <ModalBody>
-                      <Text>Cautions - {recipe.recipe.cautions}</Text>
-                      <Text>Diet - {recipe.recipe.dietLabels}</Text>
-                    </ModalBody>
-                    <ModalFooter>
-                      <Button colorScheme="blue" mr={3} onClick={onClose}>
-                        Close
-                      </Button>
-                    </ModalFooter>
-                  </ModalContent>
-                </Modal>
-              </GridItem>
+                    <Heading
+                      mb="20px"
+                      textAlign="center"
+                      fontSize="1.5em"
+                      mt="20px"
+                    >
+                      {recipe.recipe.label}
+                    </Heading>
+                  </Box>
+                  <Modal
+                    bg="transparent"
+                    size="lg"
+                    isOpen={isOpen}
+                    onClose={onClose}
+                  >
+                    <ModalOverlay />
+                    <ModalContent>
+                      <Heading>{recipe.recipe.label}</Heading>
+                      <ModalCloseButton />
+                      <ModalBody>
+                        <Text>Cautions - {recipe.recipe.cautions}</Text>
+                        <Text>Diet - {recipe.recipe.dietLabels}</Text>
+                      </ModalBody>
+                      <ModalFooter>
+                        <Button colorScheme="blue" mr={3} onClick={onClose}>
+                          Close
+                        </Button>
+                      </ModalFooter>
+                    </ModalContent>
+                  </Modal>
+                </GridItem>
+              </Fade>
             ))}
           </Grid>
         </Container>
