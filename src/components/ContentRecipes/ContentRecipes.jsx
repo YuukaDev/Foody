@@ -1,33 +1,23 @@
 import React, { useState } from "react";
 import {
   Box,
-  Text,
   HStack,
   Container,
   Input,
   Button,
   Image,
   Heading,
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalCloseButton,
-  ModalFooter,
-  ModalOverlay,
   Grid,
   GridItem,
-  List,
-  ListItem,
-  OrderedList,
   useDisclosure,
 } from "@chakra-ui/react";
 
 import axios from "axios";
 import { Fade } from "react-reveal";
+import Testing from "../Testing/Testing";
 
 function ContentRecipes() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { onOpen } = useDisclosure();
   const [recipes, setRecipes] = useState([]);
   const getRecipe = async (query) => {
     try {
@@ -72,12 +62,12 @@ function ContentRecipes() {
             alignItems="center"
             gridGap="10"
             templateColumns="repeat(3, 1fr)"
-            onClick={onOpen}
           >
             {recipes.map((recipe, index) => (
               <Fade left>
                 <GridItem
                   key={index}
+                  onClick={onOpen}
                   style={{
                     width: "300px",
                     height: "300px",
@@ -116,27 +106,6 @@ function ContentRecipes() {
                       {recipe.recipe.label}
                     </Heading>
                   </Box>
-                  <Modal
-                    bg="transparent"
-                    size="lg"
-                    isOpen={isOpen}
-                    onClose={onClose}
-                  >
-                    <ModalOverlay />
-                    <ModalContent>
-                      <Heading>{recipe.recipe.label}</Heading>
-                      <ModalCloseButton />
-                      <ModalBody>
-                        <Text>Cautions - {recipe.recipe.cautions}</Text>
-                        <Text>Diet - {recipe.recipe.dietLabels}</Text>
-                      </ModalBody>
-                      <ModalFooter>
-                        <Button colorScheme="blue" mr={3} onClick={onClose}>
-                          Close
-                        </Button>
-                      </ModalFooter>
-                    </ModalContent>
-                  </Modal>
                 </GridItem>
               </Fade>
             ))}
