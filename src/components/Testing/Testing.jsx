@@ -8,7 +8,9 @@ import {
   ModalBody,
   ModalCloseButton,
   useDisclosure,
-  Heading,
+  List,
+  ListItem,
+  UnorderedList,
   Divider,
   Button,
   Text,
@@ -38,12 +40,35 @@ function Testing({ heading, cautions, ingredient }) {
           <ModalCloseButton />
           <ModalBody>
             {cautions == isNone ? (
-              <Text>Cautions - None</Text>
+              <Text
+                style={{
+                  fontSize: "1.5em",
+                }}
+              >
+                Cautions - None
+              </Text>
             ) : (
-              <Text>Cautions - {cautions.join(", ")}</Text>
+              <Text
+                style={{
+                  fontSize: "1.5em",
+                }}
+              >
+                Cautions - {cautions.join(", ")}
+              </Text>
             )}
             <Divider bg="white" mb="10px" mt="10px" height="1px" />
-            <Text>Ingridient - {ingredient}</Text>
+            <Text
+              style={{
+                fontSize: "1.5em",
+              }}
+            >
+              Ingridient :
+            </Text>
+            <UnorderedList>
+              <ListItem>{ingredient[0]}</ListItem>
+              <ListItem>{ingredient[1]}</ListItem>
+              <ListItem>{ingredient[2]}</ListItem>
+            </UnorderedList>
           </ModalBody>
           <ModalFooter>
             <Button colorScheme="blue" mr={3} onClick={onClose}>
