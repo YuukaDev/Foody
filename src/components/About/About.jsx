@@ -7,10 +7,10 @@ function About() {
       <Container>
         <Box>
             <Heading>
-                Test
+                Soon
             </Heading>
             <Text>
-                Test
+                Soon
             </Text>
         </Box>
       </Container>
