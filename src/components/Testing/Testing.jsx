@@ -60,7 +60,7 @@ function Testing({ heading, cautions, ingredient }) {
                 fontSize: "1.5em",
               }}
             >
-              Ingridient :
+              Ingridients :
             </Text>
             <UnorderedList>
               <ListItem>{ingredient[0]}</ListItem>
