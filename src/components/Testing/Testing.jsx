@@ -17,7 +17,6 @@ import {
 } from "@chakra-ui/react";
 
 function Testing({ heading, cautions, ingredient }) {
-  const [caution, setCaution] = useState("");
   const [isNone, setNone] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
@@ -25,7 +24,6 @@ function Testing({ heading, cautions, ingredient }) {
       <Button variant="ghost" onClick={onOpen}>
         Open Modal
       </Button>
-
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
