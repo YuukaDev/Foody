@@ -10,12 +10,11 @@ import {
   Heading,
   Grid,
   GridItem,
-  useDisclosure,
 } from "@chakra-ui/react";
 
 import axios from "axios";
 import { Fade } from "react-reveal";
-import Testing from "../Testing/Testing";
+import ModulPop from "../ModulPop/ModulPop";
 
 function ContentRecipes() {
   const [recipes, setRecipes] = useState([]);
@@ -102,7 +101,7 @@ function ContentRecipes() {
                         {recipe.recipe.label}
                       </Heading>
 
-                      <Testing
+                      <ModulPop
                         heading={recipe.recipe.label}
                         cautions={recipe.recipe.cautions}
                         ingredient={recipe.recipe.ingredientLines}

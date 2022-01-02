@@ -1,5 +1,8 @@
-@media screen and (max-width: 800) {
-  .HStack {
-    background-color: red;
+@media screen and (max-width: 750) {
+  .navigation-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
   }
 }

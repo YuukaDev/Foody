@@ -8,27 +8,20 @@ import {
   ModalBody,
   ModalCloseButton,
   useDisclosure,
-  List,
   ListItem,
   UnorderedList,
   Divider,
   Button,
   Text,
-  Container,
   Box,
 } from "@chakra-ui/react";
 
-function Testing({ heading, cautions, ingredient }) {
+function ModulPop({ heading, cautions, ingredient }) {
   const [isNone, setNone] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box display="flex" justifyContent="center" alignItems="center">
-      <Button
-        colorScheme="cyan"
-        variant="outline"
-        mt="10px"
-        onClick={onOpen}
-      >
+      <Button colorScheme="cyan" variant="outline" mt="10px" onClick={onOpen}>
         Click For More Information
       </Button>
       <Modal size="lg" isOpen={isOpen} onClose={onClose}>
@@ -86,4 +79,4 @@ function Testing({ heading, cautions, ingredient }) {
   );
 }
 
-export default Testing;
+export default ModulPop;
