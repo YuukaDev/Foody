@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Modal,
   ModalOverlay,
@@ -17,7 +17,7 @@ import {
 } from "@chakra-ui/react";
 
 function ModulPop({ heading, cautions, ingredient }) {
-  const [isNone, setNone] = useState("");
+  const isNone = "";
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box display="flex" justifyContent="center" alignItems="center">
