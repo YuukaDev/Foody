@@ -21,10 +21,7 @@ function Testing({ heading, cautions, ingredient }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Button variant="ghost" onClick={onOpen}>
-        Open Modal
-      </Button>
-      <Modal size="lg" isOpen={isOpen} onClose={onClose}>
+      <Modal onOpen={onOpen} size="lg" isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader
