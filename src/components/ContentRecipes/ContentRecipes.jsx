@@ -105,6 +105,10 @@ function ContentRecipes() {
                     >
                       {recipe.recipe.label}
                     </Heading>
+                    <Testing
+                      heading={recipe.recipe.label}
+                      cautions={recipe.recipe.cautions}
+                    />
                   </Box>
                 </GridItem>
               </Fade>
