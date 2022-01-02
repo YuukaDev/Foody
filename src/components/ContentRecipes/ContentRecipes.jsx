@@ -73,27 +73,20 @@ function ContentRecipes() {
                       width: "300px",
                       height: "300px",
                       marginTop: "50px",
+                      marginBottom: "30px",
                     }}
                     boxShadow="dark-lg"
                   >
                     <Image
                       borderRadius="24px"
-                      onClick={() => {
-                        <Testing
-                          heading={recipe.recipe.label}
-                          cautions={recipe.recipe.cautions}
-                          ingredient={recipe.recipe.ingredientLines}
-                        />;
-                      }}
+                      onClick={() => {}}
                       style={{
                         heigth: "450px",
-                        overflow: "hidden",
                         transition: "0.5s all ease",
                       }}
                       src={recipe.recipe.image}
                     />
-                    <Box
-                      display="flex"
+                    <Container
                       justifyContent="center"
                       alignItems="center"
                       color="#fff"
@@ -104,15 +97,16 @@ function ContentRecipes() {
                       width="100%"
                       bg="teal.900"
                     >
-                      <Heading
-                        mb="20px"
-                        textAlign="center"
-                        fontSize="1.5em"
-                        mt="20px"
-                      >
+                      <Heading textAlign="center" fontSize="1.4em" mb="15px">
                         {recipe.recipe.label}
                       </Heading>
-                    </Box>
+
+                      <Testing
+                        heading={recipe.recipe.label}
+                        cautions={recipe.recipe.cautions}
+                        ingredient={recipe.recipe.ingredientLines}
+                      />
+                    </Container>
                   </GridItem>
                 </Fade>
               </>
