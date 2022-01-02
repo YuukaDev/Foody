@@ -10,6 +10,7 @@ import {
   Grid,
   GridItem,
   useDisclosure,
+  Divider,
 } from "@chakra-ui/react";
 
 import axios from "axios";
