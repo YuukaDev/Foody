@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Modal,
   ModalOverlay,
@@ -9,11 +9,14 @@ import {
   ModalCloseButton,
   useDisclosure,
   Heading,
+  Divider,
   Button,
   Text,
 } from "@chakra-ui/react";
 
 function Testing({ heading, cautions, ingredient }) {
+  const [caution, setCaution] = useState("");
+  const [isNone, setNone] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
@@ -24,10 +27,22 @@ function Testing({ heading, cautions, ingredient }) {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>{heading}</ModalHeader>
+          <ModalHeader
+            style={{
+              fontSize: "2em",
+              textAlign: "center",
+            }}
+          >
+            {heading}
+          </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Text>Cautions - {cautions}</Text>
+            {cautions == isNone ? (
+              <Text>Cautions - None</Text>
+            ) : (
+              <Text>Cautions - {cautions.join(", ")}</Text>
+            )}
+            <Divider bg="white" mb="10px" mt="10px" height="1px" />
             <Text>Ingridient - {ingredient}</Text>
           </ModalBody>
           <ModalFooter>
