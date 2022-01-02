@@ -24,7 +24,7 @@ function Testing({ heading, cautions, ingredient }) {
       <Button variant="ghost" onClick={onOpen}>
         Open Modal
       </Button>
-      <Modal isOpen={isOpen} onClose={onClose}>
+      <Modal size="lg" isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader
@@ -54,7 +54,7 @@ function Testing({ heading, cautions, ingredient }) {
                 Cautions - {cautions.join(", ")}
               </Text>
             )}
-            <Divider bg="white" mb="10px" mt="10px" height="1px" />
+            <Divider bg="teal" mb="10px" mt="10px" height="2px" />
             <Text
               style={{
                 fontSize: "1.5em",
