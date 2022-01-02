@@ -14,14 +14,24 @@ import {
   Divider,
   Button,
   Text,
+  Container,
+  Box,
 } from "@chakra-ui/react";
 
 function Testing({ heading, cautions, ingredient }) {
   const [isNone, setNone] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <>
-      <Modal onOpen={onOpen} size="lg" isOpen={isOpen} onClose={onClose}>
+    <Box display="flex" justifyContent="center" alignItems="center">
+      <Button
+        colorScheme="cyan"
+        variant="outline"
+        mt="10px"
+        onClick={onOpen}
+      >
+        Click For More Information
+      </Button>
+      <Modal size="lg" isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader
@@ -72,7 +82,7 @@ function Testing({ heading, cautions, ingredient }) {
           </ModalFooter>
         </ModalContent>
       </Modal>
-    </>
+    </Box>
   );
 }
 
