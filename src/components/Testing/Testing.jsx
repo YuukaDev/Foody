@@ -3,26 +3,32 @@ import {
   Modal,
   ModalOverlay,
   ModalContent,
-  Button,
+  ModalHeader,
   ModalFooter,
   ModalBody,
   ModalCloseButton,
   useDisclosure,
   Heading,
+  Button,
   Text,
 } from "@chakra-ui/react";
 
-function Testing({ heading, cautions }) {
+function Testing({ heading, cautions, ingredient }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Modal onClick={onOpen} isOpen={isOpen} onClose={onClose}>
+      <Button variant="ghost" onClick={onOpen}>
+        Open Modal
+      </Button>
+
+      <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <Heading>{heading}</Heading>
+          <ModalHeader>{heading}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Text>{cautions}</Text>
+            <Text>Cautions - {cautions}</Text>
+            <Text>Ingridient - {ingredient}</Text>
           </ModalBody>
           <ModalFooter>
             <Button colorScheme="blue" mr={3} onClick={onClose}>
