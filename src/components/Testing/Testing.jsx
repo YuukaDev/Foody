@@ -16,14 +16,7 @@ function Testing({ heading, cautions }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Button
-        onClick={() => {
-          alert("yo");
-        }}
-      >
-        Click
-      </Button>
-      <Modal isOpen={isOpen} onClose={onClose}>
+      <Modal onClick={onOpen} isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
           <Heading>{heading}</Heading>
