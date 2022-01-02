@@ -109,6 +109,7 @@ function ContentRecipes() {
                     <Testing
                       heading={recipe.recipe.label}
                       cautions={recipe.recipe.cautions}
+                      ingredient={recipe.recipe.ingredientLines}
                     />
                   </Box>
                 </GridItem>
