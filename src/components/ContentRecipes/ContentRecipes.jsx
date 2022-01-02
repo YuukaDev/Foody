@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import {
   Box,
   HStack,
@@ -10,7 +11,6 @@ import {
   Grid,
   GridItem,
   useDisclosure,
-  Divider,
 } from "@chakra-ui/react";
 
 import axios from "axios";
@@ -18,7 +18,6 @@ import { Fade } from "react-reveal";
 import Testing from "../Testing/Testing";
 
 function ContentRecipes() {
-  const { onOpen, isOpen, onClose } = useDisclosure();
   const [recipes, setRecipes] = useState([]);
   const getRecipe = async (query) => {
     try {
@@ -63,11 +62,13 @@ function ContentRecipes() {
             alignItems="center"
             gridGap="10"
             templateColumns="repeat(3, 1fr)"
+            className="grid-wrapper"
           >
             {recipes.map((recipe, index) => (
               <>
                 <Fade left>
                   <GridItem
+                    className="grid-item"
                     key={index}
                     style={{
                       width: "300px",
