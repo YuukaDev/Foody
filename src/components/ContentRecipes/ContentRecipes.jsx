@@ -23,10 +23,9 @@ function ContentRecipes() {
       const response = await axios.get(
         `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=48749e6b&app_key=%20e48b4d118c5df082474141e6e4746f1a`
       );
-      console.log(response.data.hits);
       setRecipes(response.data.hits);
-    } catch {
-      console.log("ne");
+    } catch (err) {
+      console.log(err);
     }
   };
   useEffect(() => {
@@ -43,7 +42,7 @@ function ContentRecipes() {
                 e.preventDefault();
                 const inputValue = e.target.elements.recipesInput.value;
                 if (!inputValue) {
-                  return alert("no");
+                  return alert("Couldn't find it please try again");
                 } else {
                   return getRecipe(inputValue);
                 }
