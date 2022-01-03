@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import App from "./App";
-import About from "./components/About/About";
+//import About from "./components/About/About";
 import "./index.css";
 
 ReactDOM.render(
@@ -11,7 +11,6 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path="*" element={<App />} />
-        <Route path="/about" element={<About />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
