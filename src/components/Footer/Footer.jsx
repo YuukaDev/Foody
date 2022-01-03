@@ -17,7 +17,7 @@ function Footer() {
           _hover={{
             textDecoration: "none",
           }}
-          href="https://github.com/YuukaDev"
+          href="https://www.vukcode.rs/"
         >
           Yuuka ❤️
         </Link>
