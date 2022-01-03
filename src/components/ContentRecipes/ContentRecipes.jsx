@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import {
   Box,
@@ -29,6 +29,9 @@ function ContentRecipes() {
       console.log("ne");
     }
   };
+  useEffect(() => {
+    getRecipe("egg");
+  }, []);
   return (
     <>
       <HStack>
@@ -104,6 +107,7 @@ function ContentRecipes() {
                         heading={recipe.recipe.label}
                         cautions={recipe.recipe.cautions}
                         ingredient={recipe.recipe.ingredientLines}
+                        link={recipe.recipe.url}
                       />
                     </Container>
                   </GridItem>
