@@ -17,6 +17,7 @@ function App() {
           <Navigation />
           <Hero />
           <ContentRecipes />
+          <Footer />
         </ChakraProvider>
       </ThemeProvider>
       <StrictMode>
