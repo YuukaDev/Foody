@@ -8,8 +8,8 @@ function Footer() {
       display="flex"
       justifyContent="center"
       alignItems="center"
-      mt="5em"
       height="10vh"
+      mt="80px"
     >
       <Box>
         <Text as="em">Made By </Text>
