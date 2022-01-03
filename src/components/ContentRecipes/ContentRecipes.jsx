@@ -61,9 +61,10 @@ function ContentRecipes() {
             alignItems="center"
             gridGap="10"
             templateColumns="repeat(3, 1fr)"
+            className="grid-container"
           >
             {recipes.map((recipe, index) => (
-              <div className="grid-container">
+              <div>
                 <Fade left>
                   <GridItem
                     key={index}
