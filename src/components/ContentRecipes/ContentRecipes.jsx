@@ -61,13 +61,11 @@ function ContentRecipes() {
             alignItems="center"
             gridGap="10"
             templateColumns="repeat(3, 1fr)"
-            className="grid-wrapper"
           >
             {recipes.map((recipe, index) => (
-              <>
+              <div className="grid-container">
                 <Fade left>
                   <GridItem
-                    className="grid-item"
                     key={index}
                     style={{
                       width: "300px",
@@ -100,8 +98,8 @@ function ContentRecipes() {
                       <Heading textAlign="center" fontSize="1.4em" mb="15px">
                         {recipe.recipe.label}
                       </Heading>
-
                       <ModulPop
+                        key={index}
                         heading={recipe.recipe.label}
                         cautions={recipe.recipe.cautions}
                         ingredient={recipe.recipe.ingredientLines}
@@ -109,7 +107,7 @@ function ContentRecipes() {
                     </Container>
                   </GridItem>
                 </Fade>
-              </>
+              </div>
             ))}
           </Grid>
         </Container>
