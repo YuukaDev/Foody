@@ -38,7 +38,7 @@ function ModulPop({ heading, cautions, ingredient, link }) {
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            {cautions == isNone ? (
+            {cautions === isNone ? (
               <Text
                 style={{
                   fontSize: "1.5em",
