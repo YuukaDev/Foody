@@ -13,10 +13,11 @@ import {
   Divider,
   Button,
   Text,
+  Link,
   Box,
 } from "@chakra-ui/react";
 
-function ModulPop({ heading, cautions, ingredient }) {
+function ModulPop({ heading, cautions, ingredient, link }) {
   const isNone = "";
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
@@ -69,8 +70,29 @@ function ModulPop({ heading, cautions, ingredient }) {
             </UnorderedList>
           </ModalBody>
           <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={onClose}>
+            <Button
+              colorScheme="blue"
+              variant="outline"
+              mr={3}
+              onClick={onClose}
+            >
               Close
+            </Button>
+            <Button
+              colorScheme="blue"
+              variant="outline"
+              mr={3}
+              onClick={onClose}
+            >
+              <Link
+                target="_blank"
+                _hover={{
+                  textDecoration: "none",
+                }}
+                href={link}
+              >
+                Open Link
+              </Link>
             </Button>
           </ModalFooter>
         </ModalContent>
