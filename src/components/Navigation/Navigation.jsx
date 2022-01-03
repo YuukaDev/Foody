@@ -23,7 +23,8 @@ const Navigation = () => {
           <Link
             transition="0.5s all ease"
             textDecoration="none"
-            href="/about"
+            href="https://twitter.com/yuukasuoh"
+            target="_blank"
             _hover={{
               transition: "0.5s all ease",
               transform: "scale(1.1)",
@@ -31,12 +32,14 @@ const Navigation = () => {
             }}
           >
             <Button size="md" variant="ghost">
-              About
+              Twitter
             </Button>
           </Link>
           <Link
             transition="0.5s all ease"
             textDecoration="none"
+            href="https://github.com/YuukaDev"
+            target="_blank"
             _hover={{
               transition: "0.5s all ease",
               transform: "scale(1.1)",
