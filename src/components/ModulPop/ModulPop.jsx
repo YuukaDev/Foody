@@ -12,7 +12,7 @@ import {
   UnorderedList,
   Divider,
   Button,
-  Text
+  Text,
   Link,
   Box,
 } from "@chakra-ui/react";
