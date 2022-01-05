@@ -12,6 +12,7 @@ const Navigation = () => {
         py={5}
       >
         <Link
+          href="/"
           textDecoration="none"
           _hover={{
             textDecoration: "none",
