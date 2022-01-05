@@ -10,6 +10,7 @@ import {
   Heading,
   Grid,
   GridItem,
+  useToast,
 } from "@chakra-ui/react";
 
 import axios from "axios";
@@ -17,6 +18,7 @@ import { Fade } from "react-reveal";
 import ModulPop from "../ModulPop/ModulPop";
 
 function ContentRecipes() {
+  const toast = useToast();
   const [recipes, setRecipes] = useState([]);
   const getRecipe = async (query) => {
     try {
@@ -41,8 +43,14 @@ function ContentRecipes() {
               onSubmit={(e) => {
                 e.preventDefault();
                 const inputValue = e.target.elements.recipesInput.value;
-                if (!inputValue) {
-                  return alert("Couldn't find it please try again");
+                if (!recipes.length) {
+                  return toast({
+                    title: "Error",
+                    description: "Recipe was not found try again",
+                    status: "error",
+                    duration: 5000,
+                    isClosable: true,
+                  });
                 } else {
                   return getRecipe(inputValue);
                 }
