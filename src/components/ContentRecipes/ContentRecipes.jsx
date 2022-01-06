@@ -25,6 +25,7 @@ function ContentRecipes() {
       const response = await axios.get(
         `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=48749e6b&app_key=%20e48b4d118c5df082474141e6e4746f1a`
       );
+      console.log(response.data.hits);
       setRecipes(response.data.hits);
     } catch (err) {
       console.log(err);
@@ -43,17 +44,16 @@ function ContentRecipes() {
               onSubmit={(e) => {
                 e.preventDefault();
                 const inputValue = e.target.elements.recipesInput.value;
-                if (!recipes.length) {
-                  return toast({
+                if (!inputValue || !recipes.length) {
+                  toast({
                     title: "Error",
                     description: "Recipe was not found try again",
                     status: "error",
                     duration: 5000,
                     isClosable: true,
                   });
-                } else {
-                  return getRecipe(inputValue);
                 }
+                getRecipe(inputValue);
               }}
             >
               <Box display="flex" gap="10px">
