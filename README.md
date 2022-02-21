@@ -25,7 +25,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 ## Contributing
 
 * Fork the repository
-* Clone your fork: git clone https://github.com/your-username/Foody.git
+* Clone your fork: git clone https://github.com/your-username/Foodyya.git
 * Create your feature branch: git checkout -b my-new-feature
 * Commit your changes: git commit -am 'Add some feature'
 * Push to the branch: git push origin my-new-feature
