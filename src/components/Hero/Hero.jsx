@@ -12,7 +12,7 @@ function Hero() {
       >
         <Box>
           <Heading fontSize="4em" size="lg">
-            Foody
+            Foodyya
           </Heading>
           <Text size="md" mt="10px" fontSize="1.5em">
             Search for fast and beautfiul recipes
