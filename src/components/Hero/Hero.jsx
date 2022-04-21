@@ -1,4 +1,3 @@
-import React from "react";
 import { Heading, Text, HStack, Box } from "@chakra-ui/react";
 
 function Hero() {

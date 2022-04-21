@@ -25,10 +25,9 @@ function ContentRecipes() {
       const response = await axios.get(
         `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=48749e6b&app_key=%20e48b4d118c5df082474141e6e4746f1a`
       );
-      console.log(response.data.hits);
       setRecipes(response.data.hits);
     } catch (err) {
-      console.log(err);
+      console.log(`Error - ${err}`);
     }
   };
   useEffect(() => {
@@ -44,7 +43,7 @@ function ContentRecipes() {
               onSubmit={(e) => {
                 e.preventDefault();
                 const inputValue = e.target.elements.recipesInput.value;
-                if (!inputValue || !recipes.length) {
+                if (inputValue.length === 0) {
                   toast({
                     title: "Error",
                     description: "Recipe was not found try again",
@@ -52,8 +51,9 @@ function ContentRecipes() {
                     duration: 5000,
                     isClosable: true,
                   });
+                } else {
+                  getRecipe(inputValue);
                 }
-                getRecipe(inputValue);
               }}
             >
               <Box display="flex" gap="10px">
@@ -70,14 +70,13 @@ function ContentRecipes() {
             justifyContent="center"
             alignItems="center"
             gridGap="10"
-            templateColumns="repeat(3, 1fr)"
+            templateColumns={{ xl: "repeat(3, 1fr)", sm: "repeat(1, 1fr)" }}
             className="grid-container"
           >
             {recipes.map((recipe, index) => (
-              <div>
+              <div key={index}>
                 <Fade left>
                   <GridItem
-                    key={index}
                     style={{
                       width: "300px",
                       height: "300px",
