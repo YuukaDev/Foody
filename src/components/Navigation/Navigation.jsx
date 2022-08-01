@@ -18,7 +18,7 @@ const Navigation = () => {
             textDecoration: "none",
           }}
         >
-          <Heading size="lg">Foody.</Heading>
+          <Heading size="lg">Foodyya.</Heading>
         </Link>
         <HStack alignItems="center" spacing={{ base: 0, md: 2 }}>
           <Link

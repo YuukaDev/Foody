@@ -6,33 +6,38 @@ import {
   Container,
   Input,
   Button,
-  Image,
-  Heading,
   Grid,
-  GridItem,
+  Text,
   useToast,
 } from "@chakra-ui/react";
 
 import axios from "axios";
-import { Fade } from "react-reveal";
-import ModulPop from "../ModulPop/ModulPop";
+import ContentItem from "./ContentItem";
 
 function ContentRecipes() {
   const toast = useToast();
   const [recipes, setRecipes] = useState([]);
+  const [loading, setLoading] = useState(null);
+  const [error, setError] = useState(null);
+
   const getRecipe = async (query) => {
     try {
+      setLoading(true);
       const response = await axios.get(
         `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=48749e6b&app_key=%20e48b4d118c5df082474141e6e4746f1a`
       );
       setRecipes(response.data.hits);
+      setLoading(false);
     } catch (err) {
-      console.log(`Error - ${err}`);
+      setLoading(true);
+      setError(err.message);
     }
   };
+
   useEffect(() => {
     getRecipe("egg");
   }, []);
+
   return (
     <>
       <HStack>
@@ -62,6 +67,7 @@ function ContentRecipes() {
                   placeholder="Search for recipes..."
                   type="text"
                 />
+                <Text>{error}</Text>
                 <Button type="submit">Submit</Button>
               </Box>
             </form>
@@ -74,50 +80,12 @@ function ContentRecipes() {
             className="grid-container"
           >
             {recipes.map((recipe, index) => (
-              <div key={index}>
-                <Fade left>
-                  <GridItem
-                    style={{
-                      width: "300px",
-                      height: "300px",
-                      marginTop: "50px",
-                      marginBottom: "30px",
-                    }}
-                    boxShadow="dark-lg"
-                  >
-                    <Image
-                      borderRadius="24px"
-                      onClick={() => {}}
-                      style={{
-                        heigth: "450px",
-                        transition: "0.5s all ease",
-                      }}
-                      src={recipe.recipe.image}
-                    />
-                    <Container
-                      justifyContent="center"
-                      alignItems="center"
-                      color="#fff"
-                      borderRadius="6px"
-                      height="40px"
-                      position="relative"
-                      top="2"
-                      width="100%"
-                      bg="teal.900"
-                    >
-                      <Heading textAlign="center" fontSize="1.4em" mb="15px">
-                        {recipe.recipe.label}
-                      </Heading>
-                      <ModulPop
-                        key={index}
-                        heading={recipe.recipe.label}
-                        cautions={recipe.recipe.cautions}
-                        ingredient={recipe.recipe.ingredientLines}
-                        link={recipe.recipe.url}
-                      />
-                    </Container>
-                  </GridItem>
-                </Fade>
+              <div>
+                {loading ? (
+                  <h1>Loading...</h1>
+                ) : (
+                  <ContentItem index={index} {...recipe} />
+                )}
               </div>
             ))}
           </Grid>
