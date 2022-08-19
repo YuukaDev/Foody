@@ -18,7 +18,6 @@ import {
 } from "@chakra-ui/react";
 
 function ModulPop({ heading, cautions, ingredient, link }) {
-  const isNone = "";
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box display="flex" justifyContent="center" alignItems="center">
@@ -38,7 +37,7 @@ function ModulPop({ heading, cautions, ingredient, link }) {
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            {cautions === isNone ? (
+            {!cautions.length ? (
               <Text
                 style={{
                   fontSize: "1.5em",

@@ -16,23 +16,43 @@ import {
 import axios from "axios";
 import { Fade } from "react-reveal";
 import ModulPop from "../ModulPop/ModulPop";
+import { SyncLoader } from "react-spinners";
 
 function ContentRecipes() {
-  const toast = useToast();
   const [recipes, setRecipes] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const toast = useToast();
+
   const getRecipe = async (query) => {
     try {
+      setLoading(true);
       const response = await axios.get(
         `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=48749e6b&app_key=%20e48b4d118c5df082474141e6e4746f1a`
       );
       setRecipes(response.data.hits);
+      setLoading(false);
     } catch (err) {
-      console.log(`Error - ${err}`);
+      setLoading(true);
+      setError(err.message);
     }
   };
+
   useEffect(() => {
     getRecipe("egg");
   }, []);
+
+  /*
+  if (loading) {
+    return (
+      <Box display="flex" justifyContent="center" alignItems="center">
+        <SyncLoader margin={30} color="#34de01" size={30} />
+      </Box>
+    );
+  }
+  */
+
   return (
     <>
       <HStack>
@@ -77,12 +97,10 @@ function ContentRecipes() {
               <div key={index}>
                 <Fade left>
                   <GridItem
-                    style={{
-                      width: "300px",
-                      height: "300px",
-                      marginTop: "50px",
-                      marginBottom: "30px",
-                    }}
+                    w="300px"
+                    h="300px"
+                    mt="50px"
+                    mb="30px"
                     boxShadow="dark-lg"
                   >
                     <Image
@@ -95,6 +113,7 @@ function ContentRecipes() {
                       src={recipe.recipe.image}
                     />
                     <Container
+                      overflowWrap="break-word"
                       justifyContent="center"
                       alignItems="center"
                       color="#fff"
