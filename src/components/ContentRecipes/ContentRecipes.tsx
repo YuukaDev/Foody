@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import {
   Box,
@@ -14,18 +14,17 @@ import {
 } from "@chakra-ui/react";
 
 import axios from "axios";
-import { Fade } from "react-reveal";
 import ModulPop from "../ModulPop/ModulPop";
 import { SyncLoader } from "react-spinners";
 
 function ContentRecipes() {
-  const [recipes, setRecipes] = useState([]);
+  const [recipes, setRecipes] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [search, setSearched] = useState("");
 
   const toast = useToast();
 
-  const getRecipe = async (query) => {
+  const getRecipe = async (query: string) => {
     try {
       setLoading(true);
       const response = await axios.get(
@@ -35,7 +34,7 @@ function ContentRecipes() {
       setLoading(false);
     } catch (err) {
       setLoading(true);
-      setError(err.message);
+      console.log(err);
     }
   };
 
@@ -43,15 +42,13 @@ function ContentRecipes() {
     getRecipe("egg");
   }, []);
 
-  /*
   if (loading) {
     return (
       <Box display="flex" justifyContent="center" alignItems="center">
-        <SyncLoader margin={30} color="#34de01" size={30} />
+        <SyncLoader margin={30} color="#1D4044" size={30} />
       </Box>
     );
   }
-  */
 
   return (
     <>
@@ -62,8 +59,7 @@ function ContentRecipes() {
               autoComplete="off"
               onSubmit={(e) => {
                 e.preventDefault();
-                const inputValue = e.target.elements.recipesInput.value;
-                if (inputValue.length === 0) {
+                if (!search.length) {
                   toast({
                     title: "Error",
                     description: "Recipe was not found try again",
@@ -72,7 +68,7 @@ function ContentRecipes() {
                     isClosable: true,
                   });
                 } else {
-                  getRecipe(inputValue);
+                  getRecipe(search);
                 }
               }}
             >
@@ -81,6 +77,7 @@ function ContentRecipes() {
                   id="recipesInput"
                   placeholder="Search for recipes..."
                   type="text"
+                  onChange={(e) => setSearched(e.target.value)}
                 />
                 <Button type="submit">Submit</Button>
               </Box>
@@ -95,48 +92,46 @@ function ContentRecipes() {
           >
             {recipes.map((recipe, index) => (
               <div key={index}>
-                <Fade left>
-                  <GridItem
-                    w="300px"
-                    h="300px"
-                    mt="50px"
-                    mb="30px"
-                    boxShadow="dark-lg"
+                <GridItem
+                  w="300px"
+                  h="300px"
+                  mt="50px"
+                  mb="30px"
+                  boxShadow="dark-lg"
+                >
+                  <Image
+                    borderRadius="24px"
+                    onClick={() => {}}
+                    style={{
+                      height: "fit-content",
+                      transition: "0.5s all ease",
+                    }}
+                    src={recipe.recipe.image}
+                  />
+                  <Container
+                    overflowWrap="break-word"
+                    justifyContent="center"
+                    alignItems="center"
+                    color="#fff"
+                    borderRadius="6px"
+                    height="40px"
+                    position="relative"
+                    top="2"
+                    width="100%"
+                    bg="teal.900"
                   >
-                    <Image
-                      borderRadius="24px"
-                      onClick={() => {}}
-                      style={{
-                        heigth: "450px",
-                        transition: "0.5s all ease",
-                      }}
-                      src={recipe.recipe.image}
+                    <Heading textAlign="center" fontSize="1.4em" mb="15px">
+                      {recipe.recipe.label}
+                    </Heading>
+                    <ModulPop
+                      key={index}
+                      heading={recipe.recipe.label}
+                      cautions={recipe.recipe.cautions}
+                      ingredient={recipe.recipe.ingredientLines}
+                      link={recipe.recipe.url}
                     />
-                    <Container
-                      overflowWrap="break-word"
-                      justifyContent="center"
-                      alignItems="center"
-                      color="#fff"
-                      borderRadius="6px"
-                      height="40px"
-                      position="relative"
-                      top="2"
-                      width="100%"
-                      bg="teal.900"
-                    >
-                      <Heading textAlign="center" fontSize="1.4em" mb="15px">
-                        {recipe.recipe.label}
-                      </Heading>
-                      <ModulPop
-                        key={index}
-                        heading={recipe.recipe.label}
-                        cautions={recipe.recipe.cautions}
-                        ingredient={recipe.recipe.ingredientLines}
-                        link={recipe.recipe.url}
-                      />
-                    </Container>
-                  </GridItem>
-                </Fade>
+                  </Container>
+                </GridItem>
               </div>
             ))}
           </Grid>

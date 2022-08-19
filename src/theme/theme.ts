@@ -3,7 +3,7 @@ import { createBreakpoints } from "@chakra-ui/theme-tools";
 import { mode } from "@chakra-ui/theme-tools";
 
 const styles = {
-    global: (props) => ({
+    global: (props: any) => ({
         body: {
             bg: mode("#F7FAFC", "#111")(props),
             color: mode("black", "white")(props),

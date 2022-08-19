@@ -17,7 +17,7 @@ import {
   Box,
 } from "@chakra-ui/react";
 
-function ModulPop({ heading, cautions, ingredient, link }) {
+function ModulPop({ heading, cautions, ingredient, link }: any) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box display="flex" justifyContent="center" alignItems="center">
